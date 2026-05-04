@@ -39,6 +39,17 @@ void ShowFastMenu()
     cout << "+------------------+" << endl;
 }
 
+string GetPath(const string& folderName)
+{
+    char buffer[MAX_PATH];
+    // Получаем путь к профилю пользователя (например, C:\Users\Admin)
+    DWORD result = GetEnvironmentVariableA("USERPROFILE", buffer, MAX_PATH);
+
+    if (result > 0)
+        return string(buffer) + "\\" + folderName;
+    return "";
+}
+
 void OpenFolderMenu(fs::path& dir_path)
 {
     char choice;
@@ -47,37 +58,39 @@ void OpenFolderMenu(fs::path& dir_path)
         choice = _getch();
         if (choice == '1')
         {
-            dir_path = "C:\\Users\\User\\Desktop";
+            dir_path = GetPath("Desktop");
             break;
         }
         else if (choice == '2')
         {
-            dir_path = "C:\\Users\\User\\Pictures";
+            dir_path = GetPath("Pictures");
             break;
         }
         else if (choice == '3')
         {
-            dir_path = "C:\\Users\\User\\Documents";
+            dir_path = GetPath("Documents");
             break;
         }
         else if (choice == '4')
         {
-            dir_path = "C:\\Users\\User\\Downloads";
+            dir_path = GetPath("Downloads");
             break;
         }
         else if (choice == '5')
         {
-            dir_path = "C:\\Users\\User\\Music";
+            dir_path = GetPath("Music");
             break;
         }
         else if (choice == '6')
         {
-            dir_path = "C:\\Users\\User\\Videos";
+            dir_path = GetPath("Videos");
             break;
         }
         else if (choice == '7')
         {
-            dir_path = "C:\\";
+            char buffer[MAX_PATH];
+            DWORD result = GetEnvironmentVariableA("SystemDrive", buffer, MAX_PATH);
+            dir_path = string(buffer) + '\\';
             break;
         }
     }
