@@ -27,6 +27,9 @@ string GetFileSize(unsigned long long fileSize)
 
 void ShowFastMenu()
 {
+    cout << "==== MY FILE MANAGER ====" << endl;
+    cout << "====== VERSION 1.1 ======" << endl << endl;
+
     cout << "+------------------+" << endl;
     cout << "|  Choose folder:  |" << endl;
     cout << "|  1. Desktop      |" << endl;
