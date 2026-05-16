@@ -22,4 +22,3 @@ void ArithmeticDecode(vector<char>& result, map<char, int>& freqs, int originalS
 void DecodeLab4(ifstream& file, string filePath);
 
 int StartLab4(string filePath);
-int StartLab4(string filePath);
