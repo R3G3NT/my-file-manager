@@ -215,5 +215,7 @@ int StartLab1(string filePath)
     ShowChance(bytes, amount, border);
     Events(bytes, amount, border);
 
+    cout << dec;
+
     return 0;
 }
