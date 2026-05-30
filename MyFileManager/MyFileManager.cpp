@@ -323,7 +323,7 @@ void Events(fs::path& dir_path, int& userChoice, int amountFiles)
             }
             Sleep(150);
         }
-        if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
+        if ((GetAsyncKeyState(VK_RIGHT) & 0x8000) || (GetAsyncKeyState(VK_RETURN) & 0x8000))
         {
             bool isOpenFolder = OpenFolder(dir_path, userChoice);
             if (isOpenFolder)
