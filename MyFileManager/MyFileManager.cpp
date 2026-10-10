@@ -140,7 +140,7 @@ void ShowFiles(fs::path dir_path, int choiceFile)
             }
             else
             {
-                fileName = "[F] " + fileName;
+                fileName = "[D] " + fileName;
                 cout << left << setw(52) << fileName;
                 cout << setw(8) << " " << endl;
             }
@@ -183,7 +183,7 @@ void ChangeCurrentFile(fs::path dir_path, int userChoice, int previousUserChoice
             if (entry.is_directory())
             {
                 isDirectoryPreviousFile = true;
-                fileName = "[F] " + fileName;
+                fileName = "[D] " + fileName;
             }
             previousFile = fileName;
             previousFileSize = GetFileSize(entry.file_size());
@@ -200,7 +200,7 @@ void ChangeCurrentFile(fs::path dir_path, int userChoice, int previousUserChoice
             if (entry.is_directory())
             {
                 isDirectoryCurrentFile = true;
-                fileName = "[F] " + fileName;
+                fileName = "[D] " + fileName;
             }
             currentFile = fileName;
             currentFileSize = GetFileSize(entry.file_size());
